@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // === INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ===
     const observerOptions = {
         threshold: 0.15,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px'
     };
 
     const observer = new IntersectionObserver(function (entries) {

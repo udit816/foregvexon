@@ -820,8 +820,18 @@ body {
         --section-padding: 60px;
     }
 
+    /* Fix Header Overlap: Increase top padding significantly to account for wrapped header */
+    .hero {
+        padding-top: 220px;
+        /* Increased from 180px for safety */
+        min-height: auto;
+        /* Allow height to grow */
+        padding-bottom: 80px;
+    }
+
     .hero-headline {
-        font-size: 40px;
+        font-size: 32px;
+        /* Slightly smaller for mobile */
     }
 
     .philosophy-container {
@@ -830,19 +840,31 @@ body {
     }
 
     .header-content {
-        flex-wrap: wrap;
+        flex-direction: column;
+        /* Force column stack */
+        flex-wrap: nowrap;
         height: auto;
-        padding: 16px 24px;
+        padding: 20px 24px;
         gap: 16px;
         justify-content: center;
+        text-align: center;
     }
 
     .nav {
-        order: 3;
+        order: 2;
+        /* Nav second */
         width: 100%;
         justify-content: center;
-        gap: 24px;
-        margin-top: 8px;
+        gap: 20px;
+        /* tighten gap */
+        margin-top: 0;
+    }
+
+    /* Ensure grids don't overflow */
+    .journey-grid,
+    .ecosystem-grid {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
     }
 
     .btn-header {
